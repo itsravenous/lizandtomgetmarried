@@ -6,7 +6,8 @@
 //- Definition
 mixin face_rsvp()
 
-	article.face_rsvp
-		h1 RSVP with your face
-		p Click the button to access your webcam. If you're RSVPing for multiple people, make sure everyone's in the shot!
-		
+	article.face_rsvp(style="width: 320px; height: 260px;")
+		.face_rsvp_camera
+		.face_rsvp_result
+		a(href="#").face_rsvp_reset Retake
+		a(href="#").face_rsvp_shutter Take photo

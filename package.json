@@ -19,5 +19,7 @@
     "require-globify": "^1.2.0",
     "yargs": "^1.3.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "webcamjs": "^1.0.4"
+  }
 }
