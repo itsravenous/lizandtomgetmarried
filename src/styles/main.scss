@@ -1,0 +1,9 @@
+/**
+ * @file The main SASS file. Imports all component styles
+ */
+
+@import "./_settings";
+@import "./_normalise";
+@import "../components/**/**";
+@import "../templates/**/**";
+@import "../pages/**/**";

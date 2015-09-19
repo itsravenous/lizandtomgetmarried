@@ -1,0 +1,30 @@
+//-
+	@file Defines a Default page template
+
+//- Dependencies
+include ../../components/main_header/_main_header
+include ../../components/main_content/_main_content
+include ../../components/main_footer/_main_footer
+
+//- Definition
+block vars
+
+doctype html
+
+html
+
+	head
+		title #{title}
+		meta(name="viewport", content="initial-scale=1.0")
+		link(rel="stylesheet", type="text/css", href="/css/main.css")
+
+	body(class="page--default "+bodyClass)
+
+		+main_header()
+
+		+main_content()
+			block content
+
+		+main_footer()
+
+		script(type="text/javascript", src="/js/main.js")

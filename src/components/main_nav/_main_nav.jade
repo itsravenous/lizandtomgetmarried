@@ -1,0 +1,14 @@
+//-
+	@file Defines a Main navigation mixin
+
+//- Dependencies
+
+//- Definition
+mixin main_nav(items)
+
+	nav.main_nav#nav
+		ul
+			each item in items
+				li
+					a(href="#"+item.id, class=id == item.id ? "is_active" : null) #{item.title}
+

@@ -1,0 +1,17 @@
+//-
+	@file Defines the home page
+
+//- Dependencies
+extends ../../templates/default/_default
+include ../../components/face_rsvp/_face_rsvp
+
+//- Definition
+block vars
+	- var id = "home"
+	- var title = "Home"
+	- var bodyClass = "page--home"
+
+block content
+	h1 Home
+
+	+face_rsvp()
