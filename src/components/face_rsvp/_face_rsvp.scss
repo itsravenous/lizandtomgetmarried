@@ -1,3 +1,25 @@
 /**
  * @file Defines styles for a RSVP with your face component
  */
+
+.face_rsvp {
+	// Layout
+	position: relative;
+
+	.face_rsvp_camera,
+	.face_rsvp_result {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 20px;
+		transform: scaleX(-1);
+	}
+
+	.face_rsvp_shutter,
+	.face_rsvp_reset {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
+}
