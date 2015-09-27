@@ -7,16 +7,17 @@ var Webcam = require('webcamjs');
 var FaceRsvp = function (el) {
 	this.el = el;
 	this.camera = this.el.querySelector('.face_rsvp_camera');
-	this.result = this.el.querySelector('.face_rsvp_result')
-	this.shutter = this.el.querySelector('.face_rsvp_shutter')
-	this.reset = this.el.querySelector('.face_rsvp_reset')
+	this.result = this.el.querySelector('.face_rsvp_result');
+	this.shutter = this.el.querySelector('.face_rsvp_shutter');
+	this.reset = this.el.querySelector('.face_rsvp_reset');
+
+	this.reset.style.display = 'none';
+
 
 	Webcam.attach(this.camera);
 	this.shutter.addEventListener('click', this.snapPhoto.bind(this));
 	this.reset.addEventListener('click', this.resetPhoto.bind(this));
-	this.reset.style.display = 'none';
-
-}
+};
 
 FaceRsvp.prototype = {
 	snapPhoto: function () {
@@ -35,6 +36,6 @@ FaceRsvp.prototype = {
 		this.reset.style.display = 'none';
 		this.shutter.style.display = null;
 	}
-}
+};
 
 new FaceRsvp(document.querySelector('.face_rsvp'));
