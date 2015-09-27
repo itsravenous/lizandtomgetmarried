@@ -5,6 +5,7 @@
 include ../../components/main_header/_main_header
 include ../../components/main_content/_main_content
 include ../../components/main_footer/_main_footer
+include ../../components/modal/_modal
 
 //- Definition
 block vars
@@ -26,5 +27,7 @@ html
 			block content
 
 		+main_footer()
+
+		+modal()
 
 		script(type="text/javascript", src="/js/main.js")

@@ -1,0 +1,24 @@
+/**
+ * @file Defines styles for a Form component
+ */
+
+// Fieldset
+form fieldset {
+	// Styles
+	border: 1px solid #303030;
+}
+
+// Field list
+form ul {
+	// Styles
+	list-style: none;
+	// Layout
+	padding: 0;
+}
+
+form {
+	// Layout
+	ul {
+		margin: 0;
+	}
+}

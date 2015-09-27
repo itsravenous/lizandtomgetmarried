@@ -1,0 +1,23 @@
+/**
+ * @file Provides a center-single-child mixin, using flex box
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+@mixin center_single_child {
+	text-align: center;
+
+	// // 2010
+	display: -ms-flexbox;
+	-ms-box-pack: center;
+	-ms-box-align: center;
+
+	// 2012
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+}

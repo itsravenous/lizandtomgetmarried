@@ -1,0 +1,17 @@
+//-
+	@file Defines a RSVP mixin
+
+//- Dependencies
+include ../section/_section
+include ../rsvp_form/_rsvp_form
+
+//- Definition
+mixin rsvp()
+
+	+section().rsvp
+		h1 RSVP
+		button.rsvp_yes I'm there!
+		button.rsvp_no Really sorry, can't make it
+
+		+rsvp_form()
+

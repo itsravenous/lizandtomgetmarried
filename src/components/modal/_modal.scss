@@ -1,0 +1,35 @@
+/**
+ * @file Defines styles for a Modal component
+ */
+
+// Content wrapper
+.modal_content {
+	// Styles
+	background: url('/img/corner_nw.svg') 0 0 no-repeat,
+		url('/img/corner_ne.svg') 100% 0 no-repeat,
+		url('/img/corner_se.svg') 100% 100% no-repeat,
+		#fff url('/img/corner_sw.svg') 0 100% no-repeat;
+
+	// Layout
+	padding: $wsunit;
+}
+
+// Root element
+.modal {
+	// Styles
+	background: rgba(0, 0, 0, 0.5); 
+
+	// Layout
+	@include center_single_child;
+
+	// Self-layout
+	position: absolute;
+	left: -9999px;
+	top: 0;
+	bottom: 0;
+
+	&.is_active {
+		left: 0;
+		right: 0;
+	}
+}

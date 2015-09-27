@@ -1,3 +1,11 @@
 /**
  * @file Defines styles for a Main content area component
  */
+
+.main_content {
+	// Layout
+	.intro,
+	.section {
+		margin-bottom: $wsunit;
+	}
+}

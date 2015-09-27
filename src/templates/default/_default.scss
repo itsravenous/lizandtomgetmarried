@@ -1,3 +1,9 @@
 /**
  * @file Defines styles for a Default template
  */
+
+body {
+	// Layout
+	max-width: 60rem;
+	margin: $wsunit auto;
+}

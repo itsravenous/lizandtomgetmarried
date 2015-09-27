@@ -1,0 +1,73 @@
+/**
+ * @file Defines styles for an RSVP with your face component
+ */
+
+// Camera images (live preview and result)
+.rsvp_form_camera_img,
+.rsvp_form_camera_result {
+	transform: scaleX(-1);
+}
+
+// Camera hint
+.rsvp_form_camera_hint {
+	// Icon
+	&:before {
+		@include cover;
+		@extend %animated;
+		@extend %infinite;
+		@extend %pulse;
+		background: url('/img/webcam.svg') 50% 50% no-repeat;
+		content: '';
+	}
+	// Layout
+	> span {
+		position: absolute;
+		left: $wsunit;
+		bottom: $wsunit;
+		right: $wsunit;
+	}
+}
+
+// Camera image wrapper
+.rsvp_form_camera {
+	// Styles
+	position: relative;
+	cursor: pointer;
+	background: #202020;
+	background-size: 48px;
+	color: #fff;
+
+	// State
+	transition: background-color 0.3s, background-size 0.3s;
+	&:focus,
+	&:hover {
+		background-color: #0c0c0c;
+		background-size: 64px;
+	}
+
+	// Layout
+	.rsvp_form_camera_img,
+	.rsvp_form_camera_result,
+	.rsvp_form_camera_hint {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	// Self-layout
+	width: 320px;
+	height: 240px;
+}
+
+.rsvp_form {
+	// Layout
+	position: relative;
+
+	.rsvp_form_camera {
+		display: block;
+		width: 320px;
+		margin: 0 auto;
+	}
+}

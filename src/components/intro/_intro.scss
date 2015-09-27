@@ -3,6 +3,12 @@
  */
 
 .intro {
-	font-family: 'Libre Baskerville';
-	font-style: italic;
+	// Styles
+	font: italic 1.5rem/2rem 'Libre Baskerville';
+
+	background: url('/img/divider.svg') 50% 100% no-repeat;
+
+	// Layout
+	text-align: center;
+	padding-bottom: $wsunit; 
 }

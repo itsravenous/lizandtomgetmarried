@@ -1,0 +1,12 @@
+/**
+ * @file Defines styles for a RSVP component
+ */
+
+// Root element
+.rsvp {
+	// Layout
+	text-align: center;
+	> h1 {
+		margin-bottom: $wsunit;
+	}
+}

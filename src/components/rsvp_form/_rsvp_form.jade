@@ -1,0 +1,31 @@
+//-
+	@file Defines an RSVP with your face mixin
+
+//- Dependencies
+
+//- Definition
+mixin rsvp_form()
+
+	.rsvp_form
+		form(method="POST")
+			fieldset
+				ul
+					li
+						a.rsvp_form_camera(href="#")
+							span.rsvp_form_camera_hint
+								span Click here to enable webcam and RSVP with your face!
+							span.rsvp_form_camera_img
+							span.rsvp_form_camera_result
+						a(href="#").rsvp_form_shutter Take photo
+						a(href="#").rsvp_form_reset Cracked the webcam? Retake!
+					li
+						label(for="name") Name(s)
+						input(id="name" name="name")
+					li
+						label(for="attending") Are you coming?
+						input(id="attending" name="attending" type="checkbox")
+					li
+						label(for="extra") Anything we should know, or any questions?
+						textarea(id="extra" name="extra")
+
+				button(type="submit" id="submit" name="submit") RSVP
