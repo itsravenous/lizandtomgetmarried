@@ -10,8 +10,13 @@ mixin rsvp()
 
 	+section().rsvp
 		h1 RSVP
-		button.rsvp_yes I'm there!
-		button.rsvp_no Really sorry, can't make it
+		p.rsvp_intro Are you coming? If you don't know yet, just let us know when you do.
 
-		+rsvp_form()
+		ul.rsvp_answers
+			li
+				a(href="#rsvp").rsvp_yes Yes, I'm there!
+			li
+				a(href="#rsvp").rsvp_no Can't make it
+
+		+rsvp_form()#rsvp
 

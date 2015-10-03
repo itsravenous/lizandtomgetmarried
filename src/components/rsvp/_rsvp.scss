@@ -2,11 +2,79 @@
  * @file Defines styles for a RSVP component
  */
 
+// Intro
+.rsvp_intro {
+	font-size: 1.25rem;
+}
+
+// Buttons
+.rsvp_yes,
+.rsvp_no {
+	font-family: $font_family_alt;
+	font-size: 2rem;
+	text-decoration: none;
+
+	background: none;
+	color: #204080;
+	border-top: 1px solid #a0a0a0;
+	border-bottom: 1px solid #a0a0a0;
+
+	// Animated borders
+	&:before,
+	&:after {
+		position: absolute;
+		border-bottom: 1px solid #204080;
+		left: 50%;
+		right: 50%;
+		bottom: -1px;
+		transition: left 0.3s, right 0.3s;
+		content: '';
+	}
+	&:before {
+		top: -1px;
+		bottom: auto;
+	}
+	// State
+	transition: color 0.3s;
+	&:focus:before,
+	&:focus:after,
+	&:hover:before,
+	&:hover:after {
+		left: 0;
+		right: 0;
+	}
+	&:focus,
+	&:hover {
+		color: #4060b0;
+	}
+
+	// Layout
+	position: relative;
+	padding: 1rem;
+
+	// Self-layout
+	display: inline-block;
+}
+
+.rsvp_answers {
+	list-style: none;
+	>li {
+		display: inline-block;
+	}
+	> li:first-child {
+		margin-right: 2rem;
+	}
+	> li:last-child {
+		margin-left: 2rem;
+	}
+}
+
 // Root element
 .rsvp {
 	// Layout
 	text-align: center;
-	> h1 {
+	> h1,
+	.rsvp_intro {
 		margin-bottom: $wsunit;
 	}
 }
