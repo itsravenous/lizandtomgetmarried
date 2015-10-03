@@ -5,6 +5,7 @@
 extends ../../templates/default/_default
 include ../../components/intro/_intro
 include ../../components/rsvp/_rsvp
+include ../../components/map/_map
 
 //- Definition
 block vars
@@ -17,3 +18,6 @@ block content
 		p Welcome to our wedding website! Below you can RSVP, find out about how to get to the wedding and where to stay, and suggest a song for our playlist.
 
 	+rsvp()
+
+block banner
+	+map()

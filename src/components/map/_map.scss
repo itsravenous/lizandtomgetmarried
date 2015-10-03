@@ -1,0 +1,23 @@
+/**
+ * @file Defines styles for a Map component
+ */
+
+// Intro
+.map_intro {
+	font-size: 1.25rem;
+	text-align: center;
+}
+
+.map {
+	position: relative;
+
+	// Layout
+	.map_canvas {
+		height: 30rem;
+	}
+}
+
+// Google map overrides
+.map_canvas * {
+	font: italic 1rem/1.25rem $font_family_alt !important;
+}

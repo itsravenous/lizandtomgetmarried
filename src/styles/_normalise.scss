@@ -4,5 +4,14 @@
  */
 
 body {
-	font-family: $font_family_alt;
+	font-family: $font_family;
+	margin: 0;
+	padding: 0;
+}
+
+del {
+	text-decoration: line-through;
+}
+ins {
+	text-decoration: none;
 }
