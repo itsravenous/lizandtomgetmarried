@@ -12,7 +12,7 @@ var Map = function (el) {
 	this.mapEl = el.querySelector('.map_canvas');
 
 	var mapOptions = {
-		zoom: 13,
+		zoom: 11,
 		center: new google.maps.LatLng(places.castle.lat, places.castle.lng),
 		styles: styles
 	};
