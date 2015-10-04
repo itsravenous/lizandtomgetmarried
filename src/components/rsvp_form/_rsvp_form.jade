@@ -28,7 +28,10 @@ mixin rsvp_form()
 						input(id="attending_no" name="attending" type="radio" value="no")
 						label(for="attending_no").label_check No
 					li
-						label(for="extra") Anything we should know, or any questions?
+						label(for="song") Suggest a song for our playlist
+						input(id="song" type="text" name="song")
+					li
+						label(for="extra") Anything else we should know, or any questions?
 						textarea(id="extra" name="extra")
 
 				button(type="submit" id="submit" name="submit" style="border-left: 0; border-right: 0;") Send!
