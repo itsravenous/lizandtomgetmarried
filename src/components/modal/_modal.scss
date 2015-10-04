@@ -23,7 +23,7 @@
 	@include center_single_child;
 
 	// Self-layout
-	position: absolute;
+	position: fixed;
 	left: -9999px;
 	top: 0;
 	bottom: 0;
