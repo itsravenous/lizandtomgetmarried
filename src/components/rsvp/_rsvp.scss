@@ -10,50 +10,7 @@
 // Buttons
 .rsvp_yes,
 .rsvp_no {
-	font-family: $font_family;
-	font-size: 2rem;
-	text-decoration: none;
-
-	background: none;
-	color: #204080;
-	border-top: 1px solid #a0a0a0;
-	border-bottom: 1px solid #a0a0a0;
-
-	// Animated borders
-	&:before,
-	&:after {
-		position: absolute;
-		border-bottom: 1px solid #204080;
-		left: 50%;
-		right: 50%;
-		bottom: -1px;
-		transition: left 0.3s, right 0.3s;
-		content: '';
-	}
-	&:before {
-		top: -1px;
-		bottom: auto;
-	}
-	// State
-	transition: color 0.3s;
-	&:focus:before,
-	&:focus:after,
-	&:hover:before,
-	&:hover:after {
-		left: 0;
-		right: 0;
-	}
-	&:focus,
-	&:hover {
-		color: #4060b0;
-	}
-
-	// Layout
-	position: relative;
-	padding: 1rem;
-
-	// Self-layout
-	display: inline-block;
+	@extend %button;
 }
 
 .rsvp_answers {

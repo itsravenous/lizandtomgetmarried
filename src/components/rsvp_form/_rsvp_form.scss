@@ -2,6 +2,12 @@
  * @file Defines styles for an RSVP with your face component
  */
 
+// Camera buttons
+.rsvp_form_shutter,
+.rsvp_form_reset {
+	@extend %button_small;
+}
+
 // Camera images (live preview and result)
 .rsvp_form_camera_img,
 .rsvp_form_camera_result {
@@ -61,6 +67,19 @@
 	height: 240px;
 }
 
+.rsvp_form_attending label {
+	display: inline-block;
+	margin-right: 1rem;
+}
+
+.rsvp_form input,
+.rsvp_form textarea {
+	width: 20rem;
+}
+.rsvp_form textarea {
+	height: 8rem;
+}
+
 .rsvp_form {
 	// Layout
 	position: relative;
@@ -68,6 +87,6 @@
 	.rsvp_form_camera {
 		display: block;
 		width: 320px;
-		margin: 0 auto;
+		margin: 0 auto 1rem auto;
 	}
 }

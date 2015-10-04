@@ -16,16 +16,19 @@ mixin rsvp_form()
 								span Click here to enable webcam and RSVP with your face!
 							span.rsvp_form_camera_img
 							span.rsvp_form_camera_result
-						a(href="#").rsvp_form_shutter Take photo
-						a(href="#").rsvp_form_reset Cracked the webcam? Retake!
+						a(href="#").rsvp_form_shutter ✔ &nbsp;Take photo
+						a(href="#").rsvp_form_reset ↻ Cracked the webcam? Retake!
 					li
 						label(for="name") Name(s)
-						input(id="name" name="name")
-					li
-						label(for="attending") Are you coming?
-						input(id="attending" name="attending" type="checkbox")
+						input(id="name" type="text" name="name")
+					li.rsvp_form_attending
+						label Are you coming?
+						input(id="attending_yes" name="attending" type="radio" value="yes")
+						label(for="attending_yes").label_check Yes 
+						input(id="attending_no" name="attending" type="radio" value="no")
+						label(for="attending_no").label_check No
 					li
 						label(for="extra") Anything we should know, or any questions?
 						textarea(id="extra" name="extra")
 
-				button(type="submit" id="submit" name="submit") RSVP
+				button(type="submit" id="submit" name="submit" style="border-left: 0; border-right: 0;") Send!
