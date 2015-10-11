@@ -28,10 +28,11 @@ RSVP.prototype = {
 	/**
 	 * Shows the RSVP form 
 	 */
-	showForm: function () {
+	showForm: function (e) {
+		if (e) e.preventDefault();
 		modal.setContentEl(this.form.el);
 		this.form.el.style.display = null;
-		modal.show();
+		setTimeout(modal.show.bind(modal), 10);
 	},
 
 	/**

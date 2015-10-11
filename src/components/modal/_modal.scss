@@ -11,25 +11,46 @@
 		#fff url('/img/corner_sw.svg') 0 100% no-repeat;
 
 	// Layout
-	padding: $wsunit;
+	padding: $wsunit / 2;
+	@media screen and (min-width: 40rem) {
+		padding: $wsunit;
+	}
 }
 
 // Root element
 .modal {
 	// Styles
 	background: rgba(0, 0, 0, 0.5); 
-
-	// Layout
-	@include center_single_child;
-
-	// Self-layout
+}
+// Narrow viewport layout
+.modal {
 	position: fixed;
-	left: -9999px;
 	top: 0;
 	bottom: 0;
+	width: 100%;
+	overflow: auto;
 
+	// State
+	transition: transform 0.3s;
+	transform: translateY(100%);
 	&.is_active {
-		left: 0;
-		right: 0;
+		transform: translateY(0);
+	}
+}
+// Wide viewport layout
+@media screen and (min-width: 40rem) {
+	.modal {
+		// Layout
+		@include center_single_child;
+
+		// Self-layout
+		position: fixed;
+		left: -9999px;
+		top: 0;
+		bottom: 0;
+
+		&.is_active {
+			left: 0;
+		}
 	}
 }

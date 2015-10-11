@@ -8,7 +8,9 @@ var Modal = function (el) {
 	this.contentEl = el.querySelector('.modal_content');
 
 	// Add bindings
-	this.el.addEventListener('click', this.hide.bind(this));
+	this.el.addEventListener('click', function () {
+		setTimeout(this.hide.bind(this), 100);
+	}.bind(this));
 	this.contentEl.addEventListener('click', function (e) {
 		e.stopPropagation();
 	});
