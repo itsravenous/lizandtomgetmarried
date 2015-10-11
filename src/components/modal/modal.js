@@ -3,14 +3,14 @@
  * @author Tom Jenkins tom@itsravenous.com
  */
 
+var Delegate = window.dd = require('dom-delegate').Delegate;
+
 var Modal = function (el) {
 	this.el = el;
 	this.contentEl = el.querySelector('.modal_content');
 
 	// Add bindings
-	this.el.addEventListener('click', function () {
-		setTimeout(this.hide.bind(this), 100);
-	}.bind(this));
+	this.el.addEventListener('click', this.hide.bind(this));
 	this.contentEl.addEventListener('click', function (e) {
 		e.stopPropagation();
 	});
@@ -30,8 +30,10 @@ Modal.prototype = {
 	},
 
 	hide: function () {
-		this.shown = false;
-		this.el.classList.remove('is_active');
+		setTimeout(function () {
+			this.shown = false;
+			this.el.classList.remove('is_active');
+		}.bind(this), 100);
 	},
 
 	setContentEl: function (el) {
@@ -40,6 +42,8 @@ Modal.prototype = {
 			this.contentEl.removeChild(this.contentEl.children[0]);
 		}
 		this.contentEl.appendChild(el);
+		var dd = new Delegate(this.contentEl);
+		dd.on('click', '[data-modal-hide]', this.hide.bind(this));
 	}
 
 };

@@ -34,4 +34,6 @@ mixin rsvp_form()
 						label(for="extra") Anything else we should know, or any questions?
 						textarea(id="extra" name="extra")
 
-				button(type="submit" id="submit" name="submit" style="border-left: 0; border-right: 0;") Send!
+				.rsvp_form_actions
+					button(type="submit" id="submit" name="submit" style="border-left: 0; border-right: 0;") Send!
+					a(href="#" class="rsvp_form_cancel" style="border-left: 0; border-right: 0;" data-modal-hide) Cancel

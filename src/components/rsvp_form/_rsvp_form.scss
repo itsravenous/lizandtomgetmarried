@@ -61,10 +61,6 @@
 		right: 0;
 		bottom: 0;
 	}
-
-	// Self-layout
-	width: 20rem;
-	height: 15rem;
 }
 
 .rsvp_form_attending label {
@@ -75,9 +71,28 @@
 .rsvp_form input,
 .rsvp_form textarea {
 	width: 20rem;
+	@media screen and (max-width: 40rem) {
+		width: 100%;
+	}
 }
 .rsvp_form textarea {
 	height: 8rem;
+}
+.rsvp_form_cancel {
+	@extend %button;
+}
+
+// Buttons
+.rsvp_form_actions {
+	>* {
+		display: block;
+		width: 100%;
+		margin-bottom: $wsunit / 2;
+		@media screen and (min-width: 25rem) {
+			display: inline-block;
+			width: auto;
+		}
+	}
 }
 
 .rsvp_form {
@@ -86,7 +101,11 @@
 
 	.rsvp_form_camera {
 		display: block;
-		width: 20rem;
 		margin: 0 auto 1rem auto;
+		width: 20rem;
+		height: 15rem;
+		@media screen and (max-width: 40rem) {
+			width: 100%;
+		}
 	}
 }

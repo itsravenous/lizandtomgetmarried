@@ -10,4 +10,7 @@ body {
 		max-width: 60rem;
 		margin: $wsunit auto;
 	}
+	@media screen and (max-width: 40rem) {
+		padding: $wsunit / 2;
+	}
 }

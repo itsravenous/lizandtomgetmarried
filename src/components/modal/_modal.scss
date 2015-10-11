@@ -11,6 +11,7 @@
 		#fff url('/img/corner_sw.svg') 0 100% no-repeat;
 
 	// Layout
+	overflow: auto;
 	padding: $wsunit / 2;
 	@media screen and (min-width: 40rem) {
 		padding: $wsunit;
@@ -20,15 +21,18 @@
 // Root element
 .modal {
 	// Styles
-	background: rgba(0, 0, 0, 0.5); 
-}
-// Narrow viewport layout
-.modal {
+	background: rgba(0, 0, 0, 0.5);
+	// Layout
+	.modal_content {
+		max-height: 100%;
+	}
+
+	// Narrow viewport layout
 	position: fixed;
 	top: 0;
 	bottom: 0;
-	width: 100%;
-	overflow: auto;
+	left: 0;
+	right: 0;
 
 	// State
 	transition: transform 0.3s;
@@ -36,21 +40,27 @@
 	&.is_active {
 		transform: translateY(0);
 	}
-}
-// Wide viewport layout
-@media screen and (min-width: 40rem) {
-	.modal {
+
+	// Wide viewport layout
+	@media screen and (min-width: 40rem) {
 		// Layout
-		@include center_single_child;
+		@include center_single_child_x;
 
 		// Self-layout
 		position: fixed;
 		left: -9999px;
 		top: 0;
 		bottom: 0;
+		right: auto;
 
+		// State
+		transition: none;
 		&.is_active {
 			left: 0;
+			right: 0;
 		}
+	}
+	@media screen and (min-height: 40rem) {
+		@include center_single_child_y;
 	}
 }

@@ -3,21 +3,33 @@
  * @author Tom Jenkins tom@itsravenous.com
  */
 
-@mixin center_single_child {
+@mixin center_single_child_x {
 	text-align: center;
 
-	// // 2010
+	// 2010
 	display: -ms-flexbox;
-	-ms-box-pack: center;
 	-ms-box-align: center;
 
 	// 2012
 	display: -webkit-flex;
 	display: flex;
-	-webkit-align-items: center;
-	-ms-align-items: center;
-	align-items: center;
 	-webkit-justify-content: center;
 	-ms-justify-content: center;
 	justify-content: center;
+	
+}
+
+@mixin center_single_child_y {
+	display: -webkit-flex;
+	display: flex;
+	display: -ms-flexbox;
+	-ms-box-pack: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+@mixin center_single_child {
+	@include center_single_child_x;
+	@include center_single_child_y;
 }
