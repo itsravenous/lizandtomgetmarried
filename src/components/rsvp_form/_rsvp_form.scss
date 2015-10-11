@@ -108,4 +108,18 @@
 			width: 100%;
 		}
 	}
+
+	// Wide layout
+	@media screen and (min-width: 60rem) {
+		form {
+			width: 50rem;
+		}
+		.rsvp_form_webcam {
+			float: left;
+		}
+		form li:not(.rsvp_form_webcam),
+		.rsvp_form_actions {
+			margin-left: 22rem;
+		}
+	}
 }
