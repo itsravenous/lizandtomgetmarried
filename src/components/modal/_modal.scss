@@ -55,9 +55,17 @@
 
 		// State
 		transition: none;
+		.modal_content {
+			transition: max-height 0.5s;
+			max-height: 0;
+			overflow: hidden;
+		}
 		&.is_active {
 			left: 0;
 			right: 0;
+			.modal_content {
+				max-height: 60rem;
+			}
 		}
 	}
 	@media screen and (min-height: 40rem) {
