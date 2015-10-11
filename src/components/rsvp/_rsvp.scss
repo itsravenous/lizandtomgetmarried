@@ -36,13 +36,10 @@
 			width: auto;
 		}
 		> li:first-child {
-			margin-right: 2rem;
 			&:after {
 				display: inline-block;
+				margin: 0 $wsunit / 2;
 			}
-		}
-		> li:last-child {
-			margin-left: 2rem;
 		}
 	}
 }
