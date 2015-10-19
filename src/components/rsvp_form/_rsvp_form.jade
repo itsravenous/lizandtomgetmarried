@@ -12,6 +12,8 @@ mixin rsvp_form()
 				ul
 					li.rsvp_form_webcam
 						a.rsvp_form_camera(href="#")
+							input(type="file" name="photo" accept="image/*" capture="camera")
+							input(type="hidden" name="photo_base64")
 							span.rsvp_form_camera_hint
 								span Click here to enable webcam and RSVP with your face!
 							span.rsvp_form_camera_img
