@@ -8,6 +8,7 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	connect = require('gulp-connect'),
 	svgmin = require('gulp-svgmin'),
+	rename = require('gulp-rename'),
 	argv = require('yargs')
 		.default({
 			server: true,
@@ -73,6 +74,9 @@ gulp.task('pages', function () {
 		.on('error', function (err) {
 			console.error('Error!', err.message);
 		})
+		.pipe(rename(function (path) {
+			path.basename = 'index';
+		}))
 		.pipe(gulp.dest(dest))
 		.pipe(connect.reload());
 });
@@ -97,6 +101,12 @@ gulp.task('styles', function () {
 
 });
 
+// Copy php scripts
+gulp.task('php', function () {
+	gulp.src('src/*.php')
+		.pipe(gulp.dest(dest));
+});
+
 // Server
 gulp.task('connect', function() {
 	connect.server({
@@ -115,6 +125,7 @@ gulp.task('watch', function () {
 	gulp.watch('src/img/**', ['images']);
 	gulp.watch('src/fonts/**', ['fonts']);
 	gulp.watch('src/content/**', ['content']);
+	gulp.watch('src/*.php', ['php']);
 });
 
 // Default wrapper task
@@ -123,7 +134,8 @@ var defaultTask = [
 	'styles',
 	'scripts',
 	'images',
-	'content'
+	'content',
+	'php'
 ];
 if (argv.server) defaultTask.push('connect');
 if (argv.watch) defaultTask.push('watch');
