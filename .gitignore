@@ -2,9 +2,15 @@
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
 
+# Config files
+src/config.php
+
 # Build directory
 www
 
 # Logs
 *.log
 npm-debug.log*
+
+# RSVP destination folder
+rsvps
