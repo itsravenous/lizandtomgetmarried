@@ -12,6 +12,7 @@ var RsvpForm = function (el) {
 	this.cameraResult = this.el.querySelector('.rsvp_form_camera_result');
 	this.cameraShutter = this.el.querySelector('.rsvp_form_shutter');
 	this.cameraReset = this.el.querySelector('.rsvp_form_reset');
+	this.cameraData = this.el.querySelector('.rsvp_form_camera_data');
 
 	this.hideShutter();
 	this.hideReset();
@@ -70,6 +71,8 @@ RsvpForm.prototype = {
 
 	snapPhoto: function () {
 		Webcam.snap( function(data_uri) {
+			// Add image data to form
+			this.cameraData.value = data_uri;
 			// Show photo
 			this.cameraResult.innerHTML = '<img src="'+data_uri+'"/>';
 			this.cameraResult.style.display = null;
