@@ -13,8 +13,14 @@ var RSVP = function (el) {
 	this.no = el.querySelector('.rsvp_no');
 
 	// Add bindings
-	this.yes.addEventListener('click', this.showForm.bind(this));
-	this.no.addEventListener('click', this.showForm.bind(this));
+	this.yes.addEventListener('click', function (e) {
+		e.preventDefault();
+		this.showForm(true);
+	}.bind(this));
+	this.no.addEventListener('click', function (e) {
+		e.preventDefault();
+		this.showForm(false);
+	}.bind(this));
 
 	// Create RSVP component
 	this.form = new RsvpForm(el.querySelector('.rsvp_form'));
@@ -28,10 +34,10 @@ RSVP.prototype = {
 	/**
 	 * Shows the RSVP form 
 	 */
-	showForm: function (e) {
-		if (e) e.preventDefault();
+	showForm: function (attending) {
 		modal.setContentEl(this.form.el);
 		this.form.el.style.display = null;
+		this.form.setAttending(attending);
 		setTimeout(modal.show.bind(modal), 10);
 	},
 

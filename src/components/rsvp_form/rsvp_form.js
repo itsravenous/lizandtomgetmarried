@@ -88,6 +88,14 @@ RsvpForm.prototype = {
 		// Hide reset button
 		this.hideReset();
 		this.showShutter();
+	},
+
+	setAttending: function (attending) {
+		if (attending) {
+			this.el.querySelector('#attending_yes').checked = true;
+		} else {
+			this.el.querySelector('#attending_no').checked = true;
+		}
 	}
 };
 
