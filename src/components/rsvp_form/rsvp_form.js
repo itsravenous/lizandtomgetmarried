@@ -2,7 +2,8 @@
  * @file Defines behaviours for an RSVP with your face component
  */
 
-var Webcam = require('webcamjs');
+var Webcam = require('webcamjs'),
+	device = require('../../js/device');
 
 var RsvpForm = function (el) {
 	this.el = el;
@@ -10,6 +11,7 @@ var RsvpForm = function (el) {
 	this.cameraHint = this.el.querySelector('.rsvp_form_camera_hint');
 	this.cameraImg = this.el.querySelector('.rsvp_form_camera_img');
 	this.cameraResult = this.el.querySelector('.rsvp_form_camera_result');
+	this.cameraInput = this.el.querySelector('.rsvp_form_camera_input');
 	this.cameraShutter = this.el.querySelector('.rsvp_form_shutter');
 	this.cameraReset = this.el.querySelector('.rsvp_form_reset');
 	this.cameraData = this.el.querySelector('.rsvp_form_camera_data');
@@ -22,10 +24,13 @@ var RsvpForm = function (el) {
 	this.cameraShutter.addEventListener('click', this.snapPhoto.bind(this));
 	this.cameraReset.addEventListener('click', this.resetPhoto.bind(this));
 
-	Webcam.on('live', function () {
-		this.showShutter();
-		this.hideHint();
-	}.bind(this));
+	if (device.platform !== 'ios') {
+		// All platforms apart from iOS support in-page camera feed
+		Webcam.on('live', function () {
+			this.showShutter();
+			this.hideHint();
+		}.bind(this));
+	}
 };
 
 RsvpForm.prototype = {
