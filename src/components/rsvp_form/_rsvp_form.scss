@@ -152,6 +152,22 @@
 		display: block;
 	}
 
+	// Fluid height for preview image
+	.rsvp_form_camera_result {
+		display: block;
+		position: static;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		img {
+			width: 100%;
+		}
+	}
+	.rsvp_form_camera {
+		height: auto;
+	}
+
 	.rsvp_form_camera_input {
 		opacity: 0;
 	}
