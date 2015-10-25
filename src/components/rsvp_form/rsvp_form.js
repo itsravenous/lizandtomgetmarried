@@ -30,13 +30,21 @@ var RsvpForm = function (el) {
 			if (this.cameraInput.files && this.cameraInput.files[0]) {
 				var fileReader = new FileReader();
 				fileReader.onload = function(e) {
+					// Dump to hidden input
 					this.cameraData.value = e.target.result;
+					// Show preview
+					this.cameraResult.innerHTML = '<img src="'+e.target.result+'"/>';
+					this.cameraResult.style.display = null;
 				}.bind(this);
 				fileReader.readAsDataURL(this.cameraInput.files[0]);
+				this.cameraWrapper.style.display = null;
 			}
 		}.bind(this);
 
+		// Get image data and display preview on photo selection
 		this.cameraInput.addEventListener("change", readImage, false);
+		// Hide camera result initially
+		this.cameraWrapper.style.display = 'none';
 	} else {
 		// All platforms apart from iOS support in-page camera feed
 		Webcam.on('live', function () {

@@ -12,6 +12,9 @@
 .rsvp_form_camera_img,
 .rsvp_form_camera_result {
 	transform: scaleX(-1);
+	img {
+		max-width: 100%;
+	}
 }
 
 // Camera hint
@@ -64,6 +67,8 @@
 }
 
 .rsvp_form_webcam {
+	.rsvp_camera_input_label,
+	.rsvp_camera_input_button,
 	.rsvp_form_camera_input {
 		display: none;
 	}
@@ -130,12 +135,29 @@
 	}
 }
 
-// iOS tweaks
+// iOS file input-based camera capture
 .ios .rsvp_form_webcam {
+	.rsvp_camera_input_label,
+	.rsvp_camera_input_button {
+		display: block;
+		text-align: center;
+	}
+
+	.rsvp_camera_input_button {
+		@extend %button;
+	}
+
+	label[for="image_ios"],
 	.rsvp_form_camera_input {
 		display: block;
 	}
-	.rsvp_form_camera {
+
+	.rsvp_form_camera_input {
+		opacity: 0;
+	}
+
+	.rsvp_form_camera_hint,
+	.rsvp_form_camera_img {
 		display: none;
 	}
 }
