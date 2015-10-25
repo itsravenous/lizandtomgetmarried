@@ -63,6 +63,12 @@
 	}
 }
 
+.rsvp_form_webcam {
+	.rsvp_form_camera_input {
+		display: none;
+	}
+}
+
 .rsvp_form_attending label {
 	display: inline-block;
 	margin-right: 1rem;
@@ -121,5 +127,15 @@
 		.rsvp_form_actions {
 			margin-left: 22rem;
 		}
+	}
+}
+
+// iOS tweaks
+.ios .rsvp_form_webcam {
+	.rsvp_form_camera_input {
+		display: block;
+	}
+	.rsvp_form_camera {
+		display: none;
 	}
 }
