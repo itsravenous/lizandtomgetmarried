@@ -19,7 +19,9 @@
 				// Persist RSVP
 				$rsvp = new Rsvp($data);
 				$saved = $rsvp->save();
-				$sent = self::sendRsvp($rsvp);
+				// $sent = self::sendRsvp($rsvp);
+				print_r($rsvp);
+				die;
 
 				// Send response
 				if ($saved && $sent) {

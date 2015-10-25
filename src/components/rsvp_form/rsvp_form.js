@@ -24,7 +24,20 @@ var RsvpForm = function (el) {
 	this.cameraShutter.addEventListener('click', this.snapPhoto.bind(this));
 	this.cameraReset.addEventListener('click', this.resetPhoto.bind(this));
 
-	if (device.platform !== 'ios') {
+	if (device.platform === 'iOS') {
+		// Use file input for camera capture
+		var readImage = function () {
+			if (this.cameraInput.files && this.cameraInput.files[0]) {
+				var fileReader = new FileReader();
+				fileReader.onload = function(e) {
+					this.cameraData.value = e.target.result;
+				}.bind(this);
+				fileReader.readAsDataURL(this.cameraInput.files[0]);
+			}
+		}.bind(this);
+
+		this.cameraInput.addEventListener("change", readImage, false);
+	} else {
 		// All platforms apart from iOS support in-page camera feed
 		Webcam.on('live', function () {
 			this.showShutter();
