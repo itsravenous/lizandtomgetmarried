@@ -8,6 +8,7 @@ mixin rsvp_form()
 
 	.rsvp_form&attributes(attributes)
 		form(method="POST" action="/submit.php")
+
 			fieldset
 				ul
 					li.rsvp_form_webcam
@@ -28,7 +29,7 @@ mixin rsvp_form()
 					li.rsvp_form_attending
 						label Are you coming?
 						input(id="attending_yes" name="attending" type="radio" value="yes")
-						label(for="attending_yes").label_check Yes 
+						label(for="attending_yes").label_check Yes
 						input(id="attending_no" name="attending" type="radio" value="no")
 						label(for="attending_no").label_check No
 					li
@@ -38,6 +39,7 @@ mixin rsvp_form()
 						label(for="extra") Anything else we should know, or any questions?
 						textarea(id="extra" name="extra")
 
+				.rsvp_form_status
 				.rsvp_form_actions
 					button(type="submit" id="submit" name="submit" style="border-left: 0; border-right: 0;") Send!
 					a(href="#" class="rsvp_form_cancel" style="border-left: 0; border-right: 0;" data-modal-hide) Cancel
