@@ -11,6 +11,7 @@ var RsvpForm = function (el) {
 	this.form = this.el.getElementsByTagName('form')[0];
 	this.submitButton = this.form.querySelector('button[type="submit"]');
 	this.statusArea = this.el.querySelector('.rsvp_form_status');
+	this.thanksArea = this.el.querySelector('.rsvp_form_thanks');
 	this.cameraWrapper = this.el.querySelector('.rsvp_form_camera');
 	this.cameraHint = this.el.querySelector('.rsvp_form_camera_hint');
 	this.cameraImg = this.el.querySelector('.rsvp_form_camera_img');
@@ -117,7 +118,8 @@ RsvpForm.prototype = {
 			} else {
 				this.submitButton.disabled = true;
 				this.submitButton.innerHTML = 'Sent!';
-				this.form.innerHTML = body;
+				this.thanksArea.innerHTML = body;
+				this.hideForm();
 			}
 		}
 	},
@@ -160,6 +162,14 @@ RsvpForm.prototype = {
 
 	hideImg: function () {
 		this.cameraImg.style.display = 'none';
+	},
+
+	showForm: function () {
+		this.form.style.display = null;
+	},
+
+	hideForm: function () {
+		this.form.style.display = 'none';
 	},
 
 	requestCamera: function (e, fromOrientationChange) {
