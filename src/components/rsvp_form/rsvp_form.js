@@ -86,6 +86,7 @@ RsvpForm.prototype = {
 		var body = [];
 		var fields = this.form.querySelectorAll('input, select, textarea, button[type="submit"]');
 		for (var i = 0; i < fields.length; i++) {
+			if ((fields[i].type === 'radio' || fields[i].type === 'checkbox') && !fields[i].checked) continue;
 			body.push(fields[i].name+'='+encodeURIComponent(fields[i].value));
 		}
 
