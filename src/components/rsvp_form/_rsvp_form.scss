@@ -129,6 +129,7 @@
 			float: left;
 		}
 		form li:not(.rsvp_form_webcam),
+		.rsvp_form_status,
 		.rsvp_form_actions {
 			margin-left: 22rem;
 		}
@@ -175,5 +176,21 @@
 	.rsvp_form_camera_hint,
 	.rsvp_form_camera_img {
 		display: none;
+	}
+}
+
+.rsvp_form_status {
+	padding: 1rem;
+}
+.rsvp_form form.error .rsvp_form_status {
+	color: #E15631;
+}
+
+.rsvp_form form {
+	position: relative;
+	&.submitting:after {
+		@include cover;
+		background: rgba(255, 255, 255, 0.125);
+		content: '';
 	}
 }

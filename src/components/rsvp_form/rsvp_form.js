@@ -9,6 +9,9 @@ var Webcam = require('webcamjs'),
 var RsvpForm = function (el) {
 	this.el = el;
 	this.form = this.el.getElementsByTagName('form')[0];
+	this.submitButton = this.form.querySelector('button[type="submit"]');
+	console.log(this.submitButton)
+	this.statusArea = this.el.querySelector('.rsvp_form_status');
 	this.cameraWrapper = this.el.querySelector('.rsvp_form_camera');
 	this.cameraHint = this.el.querySelector('.rsvp_form_camera_hint');
 	this.cameraImg = this.el.querySelector('.rsvp_form_camera_img');
@@ -62,11 +65,13 @@ var RsvpForm = function (el) {
 RsvpForm.prototype = {
 
 	handleSubmit: function (e) {
+		this.form.classList.add('submitting');
+		this.submitButton.innerHTML = 'Sending...';
 		// Build request body
 		var body = [];
 		var fields = this.form.querySelectorAll('input, select, textarea, button[type="submit"]');
 		for (var i = 0; i < fields.length; i++) {
-			body.push(fields[i].name+'='+fields[i].value);
+			body.push(fields[i].name+'='+encodeURIComponent(fields[i].value));
 		}
 
 		// Send it
@@ -83,10 +88,21 @@ RsvpForm.prototype = {
 	},
 
 	handleResponse: function (err, response, body) {
+		this.form.classList.remove('submitting');
 		if (err) {
-			console.error(err);
+			this.submitButton.innerHTML = 'Send!';
+			console.error('error', err);
 		} else {
-			console.log(body);
+			this.form.classList.add('submitted');
+			if (response.statusCode !== 200) {
+				this.submitButton.innerHTML = 'Send!';
+				this.form.classList.add('error');
+				this.statusArea.innerHTML = body;
+			} else {
+				this.submitButton.disabled = true;
+				this.submitButton.innerHTML = 'Sent!';
+				this.form.innerHTML = body;
+			}
 		}
 	},
 
