@@ -22,6 +22,8 @@
 				// Send it
 				if (defined('EMAIL_DESTINATION')) {
 					$sent = self::sendRsvp($rsvp);
+				} else {
+					$send = true;
 				}
 
 				// Send response
