@@ -19,7 +19,10 @@
 				// Persist RSVP
 				$rsvp = new Rsvp($data);
 				$saved = $rsvp->save();
-				$sent = self::sendRsvp($rsvp);
+				// Send it
+				if (defined('EMAIL_DESTINATION')) {
+					$sent = self::sendRsvp($rsvp);
+				}
 
 				// Send response
 				if ($saved && $sent) {
