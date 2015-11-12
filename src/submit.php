@@ -24,11 +24,13 @@
 					$sent = self::sendRsvp($rsvp);
 				}
 
+				$extra = $_POST['attending'] === 'yes' ? 'we\'re looking forward to seeing you at the wedding!' : 'sorry you can\'t make it.';
+
 				// Send response
 				if ($saved && $sent) {
-					self::confirm('RSVP saved and sent, thanks!');
+					self::confirm('Thanks for RSVPing - ' . $extra);
 				} elseif ($saved) {
-					self::confirm('RSVP saved, thanks!');
+					self::confirm('Thanks for RSVPing - ' . $extra);
 				} else {
 					throw new Exception(sprintf('Something went wrong in saving the RSVP. Please try again later or email %s', EMAIL_DESTINATION));
 				}
