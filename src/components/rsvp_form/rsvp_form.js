@@ -182,8 +182,8 @@ RsvpForm.prototype = {
 			Webcam.set({
 				width: cw,
 				height: ch,
-				destWidth: cw,
-				destHeight: ch
+				dest_width: cw,
+				dest_height: ch
 			});
 			this.cameraWrapper.style.width = cw+'px';
 			this.cameraWrapper.style.height = ch+'px';
