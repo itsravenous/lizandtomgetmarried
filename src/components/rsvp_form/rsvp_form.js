@@ -10,7 +10,6 @@ var RsvpForm = function (el) {
 	this.el = el;
 	this.form = this.el.getElementsByTagName('form')[0];
 	this.submitButton = this.form.querySelector('button[type="submit"]');
-	console.log(this.submitButton)
 	this.statusArea = this.el.querySelector('.rsvp_form_status');
 	this.cameraWrapper = this.el.querySelector('.rsvp_form_camera');
 	this.cameraHint = this.el.querySelector('.rsvp_form_camera_hint');
