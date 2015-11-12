@@ -63,6 +63,7 @@
 		top: 0;
 		right: 0;
 		bottom: 0;
+		max-width: 100%;
 	}
 }
 
@@ -113,11 +114,9 @@
 	.rsvp_form_camera {
 		display: block;
 		margin: 0 auto 1rem auto;
-		width: 20rem;
-		height: 15rem;
-		@media screen and (max-width: 40rem) {
-			width: 100%;
-		}
+		width: 22.5rem;
+		height: 16.875rem;
+		max-width: 100%;
 	}
 
 	// Wide layout
