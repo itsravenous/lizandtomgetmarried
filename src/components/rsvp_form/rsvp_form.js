@@ -3,10 +3,12 @@
  */
 
 var Webcam = require('webcamjs'),
-	device = require('../../js/device');
+	device = require('../../js/device'),
+	request = require('browser-request');
 
 var RsvpForm = function (el) {
 	this.el = el;
+	this.form = this.el.getElementsByTagName('form')[0];
 	this.cameraWrapper = this.el.querySelector('.rsvp_form_camera');
 	this.cameraHint = this.el.querySelector('.rsvp_form_camera_hint');
 	this.cameraImg = this.el.querySelector('.rsvp_form_camera_img');
@@ -52,9 +54,41 @@ var RsvpForm = function (el) {
 			this.hideHint();
 		}.bind(this));
 	}
+
+	// Bind form submit
+	this.form.addEventListener('submit', this.handleSubmit.bind(this));
 };
 
 RsvpForm.prototype = {
+
+	handleSubmit: function (e) {
+		// Build request body
+		var body = [];
+		var fields = this.form.querySelectorAll('input, select, textarea, button[type="submit"]');
+		for (var i = 0; i < fields.length; i++) {
+			body.push(fields[i].name+'='+fields[i].value);
+		}
+
+		// Send it
+		request.post({
+			url: this.form.action,
+			body: body.join('&'),
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded'
+			}
+		}, this.handleResponse.bind(this));
+
+		// Stop browser submitting form
+		e.preventDefault();
+	},
+
+	handleResponse: function (err, response, body) {
+		if (err) {
+			console.error(err);
+		} else {
+			console.log(body);
+		}
+	},
 
 	showHint: function () {
 		this.cameraHint.style.display = null;
