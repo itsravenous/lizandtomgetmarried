@@ -196,3 +196,6 @@
 		content: '';
 	}
 }
+.rsvp_form.submitted {
+	@include center_single_child;
+}

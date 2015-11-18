@@ -25,6 +25,11 @@ var RSVP = function (el) {
 	// Create RSVP component
 	this.form = new RsvpForm(el.querySelector('.rsvp_form'));
 
+	// Yikes, boundary-crossing
+	this.form.form.addEventListener('submit', function (e) {
+		modal.el.classList.add('submitted');
+	});
+
 	// Hide form by default
 	this.hideForm();
 };
@@ -32,7 +37,7 @@ var RSVP = function (el) {
 RSVP.prototype = {
 
 	/**
-	 * Shows the RSVP form 
+	 * Shows the RSVP form
 	 */
 	showForm: function (attending) {
 		modal.setContentEl(this.form.el);

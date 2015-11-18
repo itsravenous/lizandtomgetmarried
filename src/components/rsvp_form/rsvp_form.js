@@ -76,6 +76,9 @@ var RsvpForm = function (el) {
 
 	// Bind form submit
 	this.form.addEventListener('submit', this.handleSubmit.bind(this));
+
+	// Force enable submit button (in case refresh keeps it disabled)
+	this.submitButton.disabled = false;
 };
 
 RsvpForm.prototype = {
@@ -110,7 +113,7 @@ RsvpForm.prototype = {
 			this.submitButton.innerHTML = 'Send!';
 			console.error('error', err);
 		} else {
-			this.form.classList.add('submitted');
+			this.el.classList.add('submitted');
 			if (response.statusCode !== 200) {
 				this.submitButton.innerHTML = 'Send!';
 				this.form.classList.add('error');

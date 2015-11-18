@@ -78,7 +78,19 @@
 	}
 	@media screen and (min-height: 48rem) {
 		@include center_single_child_y;
+		// Self-layout
+		position: fixed;
+		left: -9999px;
+		top: 0;
+		bottom: 0;
+		right: auto;
+		transform: none;
 	}
+}
+
+// Oh the hackery
+.modal.submitted {
+	@include center_single_child_y;
 }
 
 // iOS fixes
