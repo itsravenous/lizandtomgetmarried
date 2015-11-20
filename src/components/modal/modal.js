@@ -23,16 +23,21 @@ var Modal = function (el) {
 };
 
 Modal.prototype = {
-	
+
 	show: function () {
 		this.shown = true;
 		this.el.classList.add('is_active');
+
+		// Avoid double scrollbars
+		document.body.style.overflow = 'hidden';
 	},
 
 	hide: function () {
 		setTimeout(function () {
 			this.shown = false;
 			this.el.classList.remove('is_active');
+
+			document.body.style.overflow = 'auto';
 		}.bind(this), 100);
 	},
 
