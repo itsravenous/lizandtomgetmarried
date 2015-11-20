@@ -41,7 +41,7 @@ RSVP.prototype = {
 	 */
 	showForm: function (attending) {
 		modal.setContentEl(this.form.el);
-		this.form.el.style.display = null;
+		this.form.el.style.display = 'block';
 		this.form.setAttending(attending);
 		setTimeout(modal.show.bind(modal), 10);
 	},
