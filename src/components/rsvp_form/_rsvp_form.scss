@@ -11,7 +11,7 @@
 // Camera images (live preview and result)
 .rsvp_form_camera_img,
 .rsvp_form_camera_result {
-	transform: scaleX(-1);
+	// transform: scaleX(-1);
 	text-align: center;
 	img {
 		max-width: 100%;

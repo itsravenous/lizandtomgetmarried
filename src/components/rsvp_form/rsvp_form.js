@@ -6,6 +6,8 @@ var Webcam = require('webcamjs'),
 	device = require('../../js/device'),
 	request = require('browser-request');
 
+Webcam.setSWFLocation('/js/webcam.swf');
+
 var RsvpForm = function (el) {
 	this.el = el;
 	this.form = this.el.getElementsByTagName('form')[0];
@@ -128,7 +130,7 @@ RsvpForm.prototype = {
 	},
 
 	showHint: function () {
-		this.cameraHint.style.display = null;
+		this.cameraHint.style.display = 'block';
 	},
 
 	hideHint: function () {
@@ -136,7 +138,7 @@ RsvpForm.prototype = {
 	},
 
 	showShutter: function () {
-		this.cameraShutter.style.display = null;
+		this.cameraShutter.style.display = 'block';
 	},
 
 	hideShutter: function () {
@@ -144,7 +146,7 @@ RsvpForm.prototype = {
 	},
 
 	showReset: function () {
-		this.cameraReset.style.display = null;
+		this.cameraReset.style.display = 'block';
 	},
 
 	hideReset: function () {
@@ -152,7 +154,7 @@ RsvpForm.prototype = {
 	},
 
 	showResult: function () {
-		this.cameraResult.style.display = null;
+		this.cameraResult.style.display = 'block';
 	},
 
 	hideResult: function () {
@@ -160,7 +162,7 @@ RsvpForm.prototype = {
 	},
 
 	showImg: function () {
-		this.cameraImg.style.display = null;
+		this.cameraImg.style.display = 'block';
 	},
 
 	hideImg: function () {
@@ -168,7 +170,7 @@ RsvpForm.prototype = {
 	},
 
 	showForm: function () {
-		this.form.style.display = null;
+		this.form.style.display = 'block';
 	},
 
 	hideForm: function () {

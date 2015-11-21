@@ -34,6 +34,12 @@ gulp.task('scripts', function() {
 		.pipe(connect.reload());
 });
 
+// Copy webcam flash file
+gulp.task('webcamswf', function () {
+	gulp.src('src/js/webcam.swf')
+		.pipe(gulp.dest(dest+'js'));
+});
+
 // Copy theme images
 gulp.task('images', function() {
 	gulp.src('src/img/**')
@@ -122,6 +128,7 @@ gulp.task('watch', function () {
 	gulp.watch('src/**/*.jade', ['pages']);
 	gulp.watch('src/**/*.scss', ['styles']);
 	gulp.watch('src/**/*.js', ['scripts']);
+	gulp.watch('src/js/webcam.swf', ['webcamswf']);
 	gulp.watch('src/img/**', ['images']);
 	gulp.watch('src/fonts/**', ['fonts']);
 	gulp.watch('src/content/**', ['content']);
@@ -133,6 +140,7 @@ var defaultTask = [
 	'pages',
 	'styles',
 	'scripts',
+	'webcamswf',
 	'images',
 	'content',
 	'php'
