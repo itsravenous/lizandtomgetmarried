@@ -1,0 +1,14 @@
+[
+	{
+		"id": "rsvp",
+		"title": "RSVP"
+	},
+	{
+		"id": "accomodation",
+		"title": "Accomodation"
+	},
+	{
+		"id": "travel",
+		"title": "Travel"
+	}
+]

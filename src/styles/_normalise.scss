@@ -1,0 +1,21 @@
+/**
+ * @file Base styles
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+body {
+	font-family: $font_family;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+* {
+	box-sizing: inherit;
+}
+
+del {
+	text-decoration: line-through;
+}
+ins {
+	text-decoration: none;
+}

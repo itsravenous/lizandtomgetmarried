@@ -1,0 +1,95 @@
+/**
+ * @file Defines styles for a Form component
+ */
+
+// Text inputs
+input[type="text"],
+textarea {
+	// Styles
+	border: 1px solid $grey1;
+	resize: none;
+	-webkit-appearance: none;
+	border-radius: 0;
+	font-size: 1em;
+	// Layout
+	padding: 0.5rem;
+}
+
+// Checkboxes and radios
+// Attending radios
+label.label_check {
+	cursor: pointer;
+	position: relative;
+}
+input[type="radio"],
+input[type="checkbox"] {
+	position: absolute;
+	left: -9999px;
+	+label {
+		padding-left: 1.5rem;
+		&:before,
+		&:after {
+			border: 1px solid $grey1;
+			// State
+			transition: background-color 0.3s;
+			// Self-layout
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 1rem;
+			height: 1rem;
+			content: '';
+		}
+	}
+	&:checked +label {
+		color: $blue1;
+		&:after {
+			width: 1rem;
+			height: 1rem;
+			border: 1px solid $blue1;
+			background: $blue1;
+		}
+	}
+}
+input[type="radio"] +label:before,
+input[type="radio"] +label:after {
+	border-radius: 50%;
+}
+
+// Buttons
+button {
+	@extend %button;
+	cursor: pointer;
+}
+
+// Fieldset
+form fieldset {
+	// Styles
+	border: 1px solid #303030;
+}
+
+form li {
+	// Layout
+	label {
+		display: block;
+		margin-bottom: $wsunit / 2;	
+	}
+}
+
+// Field list
+form ul {
+	// Styles
+	list-style: none;
+	// Layout
+	padding: 0;
+	li {
+		margin-bottom: $wsunit;
+	}
+}
+
+form {
+	// Layout
+	ul {
+		margin: 0;
+	}
+}

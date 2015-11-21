@@ -1,0 +1,38 @@
+//-
+	@file Defines a Default page template
+
+//- Dependencies
+include ../../components/main_header/_main_header
+include ../../components/main_content/_main_content
+include ../../components/main_footer/_main_footer
+include ../../components/modal/_modal
+
+//- Definition
+block vars
+
+doctype html
+
+html
+
+	head
+		title #{title}
+		meta(charset="utf-8")
+		meta(name="viewport" content="initial-scale=1")
+		link(rel="stylesheet", type="text/css", href="/css/main.css")
+		link(href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400italic|Milonga' rel='stylesheet' type='text/css')
+
+	body(class="page--default "+bodyClass)
+
+		+main_header()
+
+		+main_content()
+			block content
+
+		block banner
+
+		+main_footer()
+
+		+modal()
+
+		script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false")
+		script(type="text/javascript", src="/js/main.js")

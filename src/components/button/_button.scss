@@ -1,0 +1,58 @@
+/**
+ * @file Defines styles for a Button component
+ */
+%button {
+	font-family: $font_family;
+	font-size: 2rem;
+	text-decoration: none;
+	text-align: center;
+
+	background: none;
+	color: $blue1;
+	appearance: none;
+	border: none;
+	border-top: 1px solid $grey1;
+	border-bottom: 1px solid $grey1;
+
+	// Animated borders
+	&:before,
+	&:after {
+		position: absolute;
+		border-bottom: 1px solid $blue1;
+		left: 50%;
+		right: 50%;
+		bottom: -1px;
+		transition: left 0.3s, right 0.3s;
+		content: '';
+	}
+	&:before {
+		top: -1px;
+		bottom: auto;
+	}
+	// State
+	transition: color 0.3s;
+	&:focus:before,
+	&:focus:after,
+	&:hover:before,
+	&:hover:after {
+		left: 0;
+		right: 0;
+	}
+	&:focus,
+	&:hover {
+		color: lighten($blue1, 10%);
+	}
+
+	// Layout
+	position: relative;
+	padding: 1rem 2rem;
+
+	// Self-layout
+	display: inline-block;
+}
+
+%button_small {
+	@extend %button;
+	font-size: 1.125rem;
+	padding: 0.25rem 1rem !important;
+}

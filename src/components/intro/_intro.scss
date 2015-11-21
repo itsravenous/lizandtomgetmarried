@@ -1,0 +1,14 @@
+/**
+ * @file Defines styles for a Intro component
+ */
+
+.intro {
+	// Styles
+	font: italic 1.5rem/2rem $font_family_alt;
+
+	background: url('/img/divider.svg') 50% 100% no-repeat;
+
+	// Layout
+	text-align: center;
+	padding-bottom: $wsunit; 
+}

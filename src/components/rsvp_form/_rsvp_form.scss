@@ -1,0 +1,201 @@
+/**
+ * @file Defines styles for an RSVP with your face component
+ */
+
+// Camera buttons
+.rsvp_form_shutter,
+.rsvp_form_reset {
+	@extend %button_small;
+}
+
+// Camera images (live preview and result)
+.rsvp_form_camera_img,
+.rsvp_form_camera_result {
+	// transform: scaleX(-1);
+	text-align: center;
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+// Camera hint
+.rsvp_form_camera_hint {
+	// Icon
+	&:before {
+		@include cover;
+		@extend %animated;
+		@extend %infinite;
+		@extend %pulse;
+		background: url('/img/webcam.svg') 50% 50% no-repeat;
+		content: '';
+	}
+	// Layout
+	> span {
+		position: absolute;
+		left: $wsunit;
+		bottom: $wsunit;
+		right: $wsunit;
+	}
+}
+
+// Camera image wrapper
+.rsvp_form_camera {
+	// Styles
+	position: relative;
+	cursor: pointer;
+	background: #202020;
+	background-size: 48px;
+	color: #fff;
+
+	// State
+	transition: background-color 0.3s, background-size 0.3s;
+	&:focus,
+	&:hover {
+		background-color: #0c0c0c;
+		background-size: 64px;
+	}
+
+	// Layout
+	.rsvp_form_camera_img,
+	.rsvp_form_camera_result,
+	.rsvp_form_camera_hint {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+.rsvp_form_webcam {
+	.rsvp_camera_input_label,
+	.rsvp_camera_input_button,
+	.rsvp_form_camera_input {
+		display: none;
+	}
+}
+
+.rsvp_form_attending label {
+	display: inline-block;
+	margin-right: 1rem;
+}
+
+.rsvp_form input,
+.rsvp_form textarea {
+	width: 20rem;
+	@media screen and (max-width: 40rem) {
+		width: 100%;
+	}
+}
+.rsvp_form textarea {
+	height: 8rem;
+}
+.rsvp_form_cancel {
+	@extend %button;
+}
+
+// Buttons
+.rsvp_form_actions {
+	>* {
+		display: block;
+		width: 100%;
+		margin-bottom: $wsunit / 2;
+		@media screen and (min-width: 25rem) {
+			display: inline-block;
+			width: auto;
+		}
+	}
+}
+
+.rsvp_form {
+	// Layout
+	position: relative;
+
+	.rsvp_form_camera {
+		display: block;
+		margin: 0 auto 1rem auto;
+		width: 22.5rem;
+		height: 16.875rem;
+		max-width: 100%;
+	}
+
+	// Wide layout
+	@media screen and (min-width: 60rem) {
+		form {
+			width: 50rem;
+		}
+		.rsvp_form_webcam {
+			float: left;
+		}
+		form li:not(.rsvp_form_webcam),
+		.rsvp_form_status,
+		.rsvp_form_actions {
+			margin-left: 22rem;
+		}
+	}
+}
+
+// iOS file input-based camera capture
+.ios .rsvp_form_webcam {
+	.rsvp_camera_input_label,
+	.rsvp_camera_input_button {
+		display: block;
+		text-align: center;
+	}
+
+	.rsvp_camera_input_button {
+		@extend %button;
+	}
+
+	label[for="image_ios"],
+	.rsvp_form_camera_input {
+		display: block;
+	}
+
+	// Fluid height for preview image
+	.rsvp_form_camera_result {
+		display: block;
+		position: static;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		img {
+			width: 100%;
+		}
+	}
+	.rsvp_form_camera {
+		height: auto;
+	}
+
+	.rsvp_form_camera_input {
+		opacity: 0;
+	}
+
+	.rsvp_form_camera_hint,
+	.rsvp_form_camera_img {
+		display: none;
+	}
+}
+
+.rsvp_form_status {
+	padding: 1rem;
+}
+.rsvp_form form.error .rsvp_form_status {
+	color: #E15631;
+}
+
+.rsvp_form form {
+	position: relative;
+	&.submitting:after {
+		@include cover;
+		background: rgba(255, 255, 255, 0.125);
+		content: '';
+	}
+}
+.rsvp_form.submitted {
+	@include center_single_child;
+}

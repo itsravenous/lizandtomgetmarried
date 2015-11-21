@@ -1,0 +1,21 @@
+//-
+	@file Defines a RSVP mixin
+
+//- Dependencies
+include ../section/_section
+include ../rsvp_form/_rsvp_form
+
+//- Definition
+mixin rsvp()
+
+	+section().rsvp
+		h1 RSVP
+		p.rsvp_intro Are you coming? Please let us know by 30th Jan 2016.
+
+		ul.rsvp_answers
+			li
+				a(href="#rsvp").rsvp_yes Yes, I'm there!
+			li
+				a(href="#rsvp").rsvp_no Can't make it
+
+		+rsvp_form()#rsvp

@@ -1,0 +1,114 @@
+/**
+ * @file Defines styles for a Modal component
+ */
+
+// Content wrapper
+.modal_content {
+	// Styles
+	background: url('/img/corner_nw.svg') 0 0 no-repeat,
+		url('/img/corner_ne.svg') 100% 0 no-repeat,
+		url('/img/corner_se.svg') 100% 100% no-repeat,
+		#fff url('/img/corner_sw.svg') 0 100% no-repeat;
+
+	// Layout
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	padding: $wsunit / 2;
+	@media screen and (min-width: 40rem) {
+		padding: $wsunit;
+	}
+}
+
+// Root element
+.modal {
+	// Styles
+	background: rgba(0, 0, 0, 0.5);
+	// Layout
+	.modal_content {
+		max-height: 100%;
+	}
+
+	// Narrow viewport layout
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	pointer-events: none;
+
+	// State
+	transition: transform 0.3s, opacity 0s ease 0.3s;
+	transform: translateY(100%);
+	&.is_active {
+		transition: transform 0.3s, opacity 0s ease 0s;
+		transform: translateY(0);
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	// Wide viewport layout
+	@media screen and (min-width: 40rem) {
+		// Layout
+		@include center_single_child_x;
+
+		// Self-layout
+		position: fixed;
+		left: -9999px;
+		top: 0;
+		bottom: 0;
+		right: auto;
+		transform: none;
+
+		// State
+		transition: none;
+		.modal_content {
+			transition: max-height 0.5s;
+			max-height: 0;
+			overflow: hidden;
+		}
+		&.is_active {
+			left: 0;
+			right: 0;
+			.modal_content {
+				max-height: 60rem;
+				overflow: auto;
+			}
+		}
+	}
+	@media screen and (min-height: 48rem) {
+		@include center_single_child_y;
+		// Self-layout
+		position: fixed;
+		left: -9999px;
+		top: 0;
+		bottom: 0;
+		right: auto;
+		transform: none;
+	}
+}
+.ie9 .modal .modal_content {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 900px;
+	height: 700px;
+	margin-left: -450px;
+	margin-top: -350px;
+}
+
+// Oh the hackery
+.modal.submitted {
+	@include center_single_child_y;
+}
+
+// iOS fixes
+.ios .modal {
+	transform: none;
+	transition: none;
+	display: none;
+	&.is_active {
+		display: block;
+		transform: none;
+	}
+}

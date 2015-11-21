@@ -1,0 +1,16 @@
+/**
+ * @file Defines styles for a Default template
+ */
+
+body {
+	// Layout
+	.main_header,
+	.main_content,
+	.main_footer {
+		max-width: 60rem;
+		margin: $wsunit auto;
+	}
+	@media screen and (max-width: 40rem) {
+		padding: $wsunit / 2;
+	}
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="47.542374"
+   height="52.040607"
+   id="svg5143">
+  <defs
+     id="defs5145" />
+  <metadata
+     id="metadata5148">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-351.22882,-506.34049)"
+     id="layer1">
+    <g
+       transform="matrix(0.81355932,0,0,0.81355932,163.47458,85.626862)"
+       id="g3968"
+       style="stroke:#c8beb7;stroke-width:2.45833325;stroke-miterlimit:4;stroke-opacity:0.88627451;stroke-dasharray:none">
+      <path
+         d="m 250,562.86218 20,0 12,17 -44,0 z"
+         id="rect3964"
+         style="fill:none;stroke:#c8beb7;stroke-width:2.45833325;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.88627451;stroke-dasharray:none" />
+      <path
+         d="m 288,546.35999 a 28,28 0 1 1 -56,0 28,28 0 1 1 56,0 z"
+         transform="translate(0,0.00216797)"
+         id="path3192"
+         style="fill:#ffffff;fill-opacity:1;stroke:#c8beb7;stroke-width:2.45833325;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.88627451;stroke-dasharray:none" />
+      <path
+         d="m 288,546.35999 a 28,28 0 1 1 -56,0 28,28 0 1 1 56,0 z"
+         transform="matrix(0.35714285,0,0,0.35714285,167.14286,351.23358)"
+         id="path3962"
+         style="fill:none;stroke:#c8beb7;stroke-width:6.88333368;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.88627451;stroke-dasharray:none" />
+    </g>
+  </g>
+</svg>

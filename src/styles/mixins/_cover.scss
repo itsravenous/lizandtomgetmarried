@@ -1,0 +1,12 @@
+/**
+ * @file Cover mixin
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+@mixin cover {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
