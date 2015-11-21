@@ -1,4 +1,6 @@
-# 
+Wedding website for Tom and Liz
+===============================
+
 This site is built with the help of [Bastet](https://github.com/itsravenous/bastet), a lightweight, component-focused static site builder.
 
 ## Getting started
