@@ -27,5 +27,3 @@ Bastet sites use [Gulp](http://gulpjs.com/) to compile the various source files 
 Build the site and compile and reload browser on changes:
 
 `gulp`
-
-
