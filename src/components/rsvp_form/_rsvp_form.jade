@@ -10,35 +10,34 @@ mixin rsvp_form()
 		.rsvp_form_thanks
 		form(method="POST" action="/submit.php")
 
-			fieldset
-				ul
-					li.rsvp_form_webcam
-						label(for="image_ios").rsvp_camera_input_label Hit the button to RSVP with your face!
-						label(for="image_ios").rsvp_camera_input_button Take photo
-						input(type="file" name="image_ios" id="image_ios" accept="image/*" capture="camera").rsvp_form_camera_input
-						input(type="hidden" name="image").rsvp_form_camera_data
-						a.rsvp_form_camera(href="#")
-							span.rsvp_form_camera_hint
-								span Click here to enable webcam and RSVP with your face!
-							span.rsvp_form_camera_img
-							span.rsvp_form_camera_result
-						a(href="#").rsvp_form_shutter ✔ &nbsp;Take photo
-						a(href="#").rsvp_form_reset ↻ Cracked the webcam? Retake!
-					li
-						label(for="names") Name(s)
-						input(id="names" type="text" name="names")
-					li.rsvp_form_attending
-						label Are you coming?
-						input(id="attending_yes" name="attending" type="radio" value="yes")
-						label(for="attending_yes").label_check Yes
-						input(id="attending_no" name="attending" type="radio" value="no")
-						label(for="attending_no").label_check No
-					li
-						label(for="song") Suggest a song for our playlist
-						input(id="song" type="text" name="song")
-					li
-						label(for="extra") Anything else we should know, or any questions?
-						textarea(id="extra" name="extra")
+			ul
+				li.rsvp_form_webcam
+					label(for="image_ios").rsvp_camera_input_label Hit the button to RSVP with your face!
+					label(for="image_ios").rsvp_camera_input_button Take photo
+					input(type="file" name="image_ios" id="image_ios" accept="image/*" capture="camera").rsvp_form_camera_input
+					input(type="hidden" name="image").rsvp_form_camera_data
+					a.rsvp_form_camera(href="#")
+						span.rsvp_form_camera_hint
+							span Click here to enable webcam and RSVP with your face!
+						span.rsvp_form_camera_img
+						span.rsvp_form_camera_result
+					a(href="#").rsvp_form_shutter ✔ &nbsp;Take photo
+					a(href="#").rsvp_form_reset ↻ Cracked the webcam? Retake!
+				li
+					label(for="names") Name(s)
+					input(id="names" type="text" name="names")
+				li.rsvp_form_attending
+					label Are you coming?
+					input(id="attending_yes" name="attending" type="radio" value="yes")
+					label(for="attending_yes").label_check Yes
+					input(id="attending_no" name="attending" type="radio" value="no")
+					label(for="attending_no").label_check No
+				li
+					label(for="song") Suggest a song for our playlist
+					input(id="song" type="text" name="song")
+				li
+					label(for="extra") Anything else we should know, or any questions?
+					textarea(id="extra" name="extra")
 
 				.rsvp_form_status
 				.rsvp_form_actions
