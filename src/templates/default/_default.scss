@@ -12,5 +12,8 @@ body {
 	}
 	@media screen and (max-width: 40rem) {
 		padding: $wsunit / 2;
+		.main_header {
+			margin-top: 0;
+		}
 	}
 }

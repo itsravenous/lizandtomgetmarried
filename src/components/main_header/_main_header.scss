@@ -2,14 +2,17 @@
  * @file Defines styles for a Main header component
  */
 
-.main_header h1 {
-	// Layout
-	text-align: center;
-}
-
 // Root element
 .main_header {
+	text-align: center;
 	// Layout
+	img {
+		width: 12rem;
+		@media screen and (max-width: 25rem) {
+			width: 10rem;
+		}
+	}
+
 	h1 {
 		max-width: 14em;
 		margin: 0 auto;
