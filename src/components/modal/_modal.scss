@@ -87,6 +87,15 @@
 		transform: none;
 	}
 }
+.ie9 .modal .modal_content {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 900px;
+	height: 700px;
+	margin-left: -450px;
+	margin-top: -350px;
+}
 
 // Oh the hackery
 .modal.submitted {

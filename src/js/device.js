@@ -11,15 +11,25 @@ if (window.device) {
 	var iOS = ( uaString.match(/(ipad|iphone|ipod)/g) ? true : false );
 	var androidIdx = uaString.indexOf('android');
 	var android = androidIdx > -1;
+	var ie9 = uaString.indexOf('msie 9') != -1;
 
-	var platform = android ? 'Android' : iOS ? 'iOS' : 'default';
-	
+	var platform;
+	if (android) {
+		platform = 'Android';
+	} else if (iOS) {
+		platform = 'iOS';
+	} else if (ie9) {
+		platform = 'ie9';
+	} else {
+		platform = 'default';
+	}
+
 	var dev = {
 		platform: platform
 	};
 
 	if (platform == 'Android') {
-		dev.androidVersion = parseFloat(uaString.slice(androidIdx+8)); 
+		dev.androidVersion = parseFloat(uaString.slice(androidIdx+8));
 	}
 }
 
