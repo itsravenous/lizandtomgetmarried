@@ -97,9 +97,9 @@
 
 		public function toHtml() {
 			$html = sprintf('Names: %s <br>', $this->names);
-			$html .= sprintf('Attending: %s', $this->attending);
-			$html .= sprintf('Song: %s', $this->song);
-			$html .= sprintf('Extra info: %s', $this->extra);
+			$html .= sprintf('Attending: %s <br>', $this->attending);
+			$html .= sprintf('Song: %s <br>', $this->song);
+			$html .= sprintf('Extra info: %s <br>', $this->extra);
 			$html .= sprintf('Image: <img src="%s">', $this->image);
 			return $html;
 		}
