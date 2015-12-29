@@ -3,7 +3,7 @@
 	error_reporting(1);
 
 	require_once(__DIR__.'/config.php');
-	require_once(__DIR__.'/swift-mailer/lib/swift_required.php');
+	require_once(__DIR__.'/swiftmailer/lib/swift_required.php');
 
 	class RequestHandler {
 		public static function handle() {
