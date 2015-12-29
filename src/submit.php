@@ -3,6 +3,7 @@
 	error_reporting(1);
 
 	require_once(__DIR__.'/config.php');
+	require_once(__DIR__.'/swift-mailer/lib/swift_required.php');
 
 	class RequestHandler {
 		public static function handle() {
@@ -25,7 +26,6 @@
 				}
 
 				$extra = $_POST['attending'] === 'yes' ? 'we\'re looking forward to seeing you at the wedding!' : 'sorry you can\'t make it.';
-
 				// Send response
 				if ($saved && $sent) {
 					self::confirm('Thanks for RSVPing - ' . $extra);
@@ -60,9 +60,18 @@
 		}
 
 		private static function sendRsvp($rsvp) {
-			$headers  = 'MIME-Version: 1.0' . "\r\n";
-			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-			return mail(EMAIL_DESTINATION, 'Wedding Rsvp', $rsvp->toHtml(), $headers);
+			// Create the message
+			$message = Swift_Message::newInstance()
+				->setSubject('Wedding RSVP')
+				->setFrom(array('rsvps@lizandtomgetmarried.co.uk' => 'RSVPs'))
+				->setTo(array(EMAIL_DESTINATION))
+				->setBody('')
+				->addPart($rsvp->toHtml(), 'text/html')
+				->attach(Swift_Attachment::newInstance($rsvp->image, 'selfie.jpg', 'image/jpeg'));
+
+				$transport = Swift_SendmailTransport::newInstance();
+				$mailer = Swift_Mailer::newInstance($transport);
+				return $mailer->send($message);
 		}
 
 		private static function ensureRsvpDir() {

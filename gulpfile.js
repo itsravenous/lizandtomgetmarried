@@ -109,7 +109,7 @@ gulp.task('styles', function () {
 
 // Copy php scripts
 gulp.task('php', function () {
-	gulp.src('src/*.php')
+	gulp.src('src/**/*.php')
 		.pipe(gulp.dest(dest));
 });
 
