@@ -6,6 +6,7 @@ include ../../components/main_header/_main_header
 include ../../components/main_content/_main_content
 include ../../components/main_footer/_main_footer
 include ../../components/modal/_modal
+include ../../components/browser_bar/_browser_bar
 
 //- Definition
 block vars
@@ -22,6 +23,10 @@ html
 		link(href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400italic|Milonga' rel='stylesheet' type='text/css')
 
 	body(class="page--default "+bodyClass)
+
+		<!--[if lt IE 9]>
+		+browser_bar()
+		<![endif]-->
 
 		+main_header()
 
